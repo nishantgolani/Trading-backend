@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 version: "3"
 services:
   web:
@@ -7,3 +8,16 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
+=======
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver"
+    container_name: stoke
+    ports:
+      - "8000:8000"
+>>>>>>> 9760532483ae95be0ec254447b44854be07497bf
