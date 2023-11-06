@@ -1,0 +1,10 @@
+python==3.8.0
+django==3.0
+drf_yasg
+django-rest-auth 
+django-allauth 
+djangorestframework-jwt
+django-cors-headers
+mysqlclient
+djangorestframework-simplejwt
+phonenumbersmailjet_rest
