@@ -39,10 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'drf_yasg',
-<<<<<<< HEAD
-=======
     'adminpanal',
->>>>>>> 9760532483ae95be0ec254447b44854be07497bf
     'account',
     'rest_framework',
     'rest_framework_jwt',

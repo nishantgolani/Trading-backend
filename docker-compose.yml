@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 version: "3"
 services:
   web:
@@ -8,7 +8,7 @@ services:
     command: python manage.py runserver 0.0.0.0:8000
     volumes:
       - .:/code
-=======
+
 version: '3'
 
 services:
@@ -20,4 +20,3 @@ services:
     container_name: stoke
     ports:
       - "8000:8000"
->>>>>>> 9760532483ae95be0ec254447b44854be07497bf
