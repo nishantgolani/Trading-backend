@@ -31,11 +31,8 @@ class UserRegistrationView(viewsets.ModelViewSet):
     @action(detail=False, methods=["POST"])
     def register(self, request):
         serializer = UserRegistrationSerializer(data=request.data)
-<<<<<<< HEAD
         # print(serializer)
         # print("email : ", request.data['email'])
-=======
->>>>>>> 9760532483ae95be0ec254447b44854be07497bf
         if serializer.is_valid():
             user = serializer.save()
             from_email = settings.EMAIL_HOST_USER
@@ -44,8 +41,6 @@ class UserRegistrationView(viewsets.ModelViewSet):
             subject = 'Your OTP for Account Verification'
             email_context = {'otp': user.otp}
             html_content = render_to_string('otp_email.html', email_context)
-<<<<<<< HEAD
-
             # Create the email message
             text_content = strip_tags(html_content)  # Plain text version of the HTML email
             email = EmailMultiAlternatives(subject, text_content, from_email, [recipient_email])
@@ -61,16 +56,16 @@ class UserRegistrationView(viewsets.ModelViewSet):
             # send_mail(subject, email_body, from_email, [recipient_email], fail_silently=False)
             return Response({'message': 'OTP sent to your email'}, status=status.HTTP_201_CREATED)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-=======
-            text_content = strip_tags(html_content)  
-            email = EmailMultiAlternatives(subject, text_content, from_email, [recipient_email])
-            email.attach_alternative(html_content, "text/html") 
-            email.send()
-            return render(request, 'registration_success.html')
-        return render(request, 'registration_form.html', {'errors': serializer.errors})
+
+        #     text_content = strip_tags(html_content)  
+        #     email = EmailMultiAlternatives(subject, text_content, from_email, [recipient_email])
+        #     email.attach_alternative(html_content, "text/html") 
+        #     email.send()
+        #     return render(request, 'registration_success.html')
+        # return render(request, 'registration_form.html', {'errors': serializer.errors})
         #     return Response({'message': 'OTP sent to your email'}, status=status.HTTP_201_CREATED)
         # return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
->>>>>>> 9760532483ae95be0ec254447b44854be07497bf
+
     
 
 class UserViewSet(viewsets.ModelViewSet):
