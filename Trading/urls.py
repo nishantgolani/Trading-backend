@@ -41,5 +41,5 @@ urlpatterns = [
     path('', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
     path('',include('account.urls')),
     path('', include('account_rest_auth.urls')),
-    path('', include('upstox_trading.urls'))
+    # path('', include('upstox_trading.urls'))
 ]

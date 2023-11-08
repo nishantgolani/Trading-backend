@@ -1,22 +1,28 @@
-
-version: "3"
-services:
-  web:
-    build: .
-    ports:
-      - "8000:8000"
-    command: python manage.py runserver 0.0.0.0:8000
-    volumes:
-      - .:/code
-
 version: '3'
 
 services:
+  # Django application service
   web:
     build:
       context: .
       dockerfile: Dockerfile
     command: bash -c "python manage.py makemigrations && python manage.py migrate && python manage.py runserver"
     container_name: stoke
+    image: stoke:latest
     ports:
       - "8000:8000"
+    volumes:
+      - .:/app
+    # environment:
+    #   - DJANGO_SETTINGS_MODULE=your_project.settings
+  #   depends_on:
+  #     - db
+
+  # # MySQL service
+  # db:
+  #   image: mysql:5.7
+  #   container_name: mysql-django
+  #   environment:
+  #     MYSQL_DATABASE: arjuneye
+  #   volumes:
+  #     - /path/to/your/mysql/data:/var/lib/mysql
