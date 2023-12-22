@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-q7(51cb@w*0azspoyjfna@ysl=on65*(8wg47$%!wj@vqf#huy
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["74.208.107.226","www.api.arjuneye.com"]
 AUTH_USER_MODEL = 'account.user'
 
 # Application definition
@@ -80,17 +80,23 @@ import os
 
 # Database
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql',
+        'ENGINE': 'django.db.backends.sqlite3',
         'NAME': 'arjuneye',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'localhost',  
-        'PORT': '3306',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'arjuneye',
+#         'USER': 'arjuneye',
+#         'PASSWORD': 'Arjuneye#$123',
+#         'HOST': 'localhost',  
+#         'PORT': '3306',
+#     }
+# }
 
 
 
