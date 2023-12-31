@@ -143,7 +143,13 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # ---------------------------------------------------------------------------------------------------------------------------------
 
 CORS_ALLOW_ALL_ORIGINS = True
-
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",
+    "https://api.arjuneye.com",
+    "https://www.api.arjuneye.com",
+    "https://api.arjuneye.com/",
+    "https://www.api.arjuneye.com/",
+]
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.hostinger.com'
 EMAIL_USE_SSL = True
