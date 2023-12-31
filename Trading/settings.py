@@ -44,6 +44,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework_jwt',
     'account_rest_auth',
+    'corsheaders',
+
 ]
 
 MIDDLEWARE = [
@@ -54,6 +56,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'Trading.urls'
@@ -128,7 +131,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
-STATIC_URL = 'static/'
+STATIC_URL = '/static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
@@ -137,14 +142,14 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 # ---------------------------------------------------------------------------------------------------------------------------------
 
-
+CORS_ALLOW_ALL_ORIGINS = True
 
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_USE_TLS = True
-EMAIL_PORT =587
-EMAIL_HOST_USER = 'mrgolani2002@gmail.com'
-EMAIL_HOST_PASSWORD = 'hkyu unva kaek frym'
+EMAIL_HOST = 'smtp.hostinger.com'
+EMAIL_USE_SSL = True
+EMAIL_PORT =465
+EMAIL_HOST_USER = 'noreply@arjuneye.com'
+EMAIL_HOST_PASSWORD = 'Moksh@9898965365'
 
 MAX_OTP_TRY = 3
 
